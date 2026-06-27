@@ -1,5 +1,16 @@
 # Braiins Pool — Home Assistant integration
 
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
+[![GitHub release](https://img.shields.io/github/v/release/pos-ei-don/ha-braiins-pool?include_prereleases)](https://github.com/pos-ei-don/ha-braiins-pool/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+[![Add repository to HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=pos-ei-don&repository=ha-braiins-pool&category=integration)
+[![Add integration to Home Assistant](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=braiins_pool)
+
+> First button: add this repo to HACS as a custom integration. Second button:
+> start the *Braiins Pool* config flow (works once the integration is installed
+> and Home Assistant restarted).
+
 A small, clean Home Assistant integration that reads **pool-side** mining stats
 from the [Braiins Pool](https://pool.braiins.com/) account API and exposes them
 as sensors (account totals + per-worker hashrate).
