@@ -1,0 +1,20 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Braiins Pool",
+        "description": "Enter a read-only Braiins Pool API token (pool.braiins.com → Account → Access Profiles).",
+        "data": {
+          "api_token": "API token"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid API token.",
+      "cannot_connect": "Could not reach the Braiins Pool API."
+    },
+    "abort": {
+      "already_configured": "This Braiins Pool account is already configured."
+    }
+  }
+}
