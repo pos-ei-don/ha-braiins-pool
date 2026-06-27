@@ -81,6 +81,9 @@ ACCOUNT_SENSORS: tuple[AccountSensorDescription, ...] = (
         key="today_reward",
         name="Today reward",
         native_unit_of_measurement=UNIT_BTC,
+        # Resets daily; total_increasing lets HA treat the midnight reset as a
+        # new cycle and still build long-term statistics.
+        state_class=SensorStateClass.TOTAL_INCREASING,
         suggested_display_precision=8,
         icon="mdi:currency-btc",
         value_fn=lambda p: p.get("today_reward"),
@@ -89,6 +92,7 @@ ACCOUNT_SENSORS: tuple[AccountSensorDescription, ...] = (
         key="all_time_reward",
         name="All-time reward",
         native_unit_of_measurement=UNIT_BTC,
+        state_class=SensorStateClass.TOTAL_INCREASING,
         suggested_display_precision=8,
         icon="mdi:currency-btc",
         value_fn=lambda p: p.get("all_time_reward"),
@@ -124,6 +128,9 @@ async def async_setup_entry(
     # Workers present on first refresh. (Dynamic add/remove of workers over time
     # is a deliberate follow-up — see the ideas ticket.)
     for worker in coordinator.data.get("workers", {}):
+        if worker.endswith("[auto]"):
+            # Braiins' auto-scaling pseudo-worker, not a real device — skip it.
+            continue
         for key, label, unit, field, is_hr in WORKER_SENSORS:
             entities.append(
                 BraiinsWorkerSensor(
