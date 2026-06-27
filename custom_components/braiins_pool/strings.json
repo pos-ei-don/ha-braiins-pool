@@ -16,5 +16,16 @@
     "abort": {
       "already_configured": "This Braiins Pool account is already configured."
     }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Braiins Pool options",
+        "description": "How often to poll the Braiins Pool API. Pool stats only move on the order of minutes, so larger values are gentler on the recorder database.",
+        "data": {
+          "scan_interval": "Update interval (seconds)"
+        }
+      }
+    }
   }
 }

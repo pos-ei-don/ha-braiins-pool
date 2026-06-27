@@ -40,6 +40,14 @@ Python dependencies (uses Home Assistant's own HTTP client).
 
 **Per worker** (present at setup): 5m hashrate, 24h hashrate (TH/s), state.
 
+## Options
+
+Settings → Devices & Services → *Braiins Pool* → **Configure** lets you set the
+**update interval** (seconds, default 300). Pool stats move slowly, so a larger
+value is gentler on the recorder database. Reward sensors use
+`state_class: total_increasing`, so long-term history is kept as compact hourly
+statistics regardless of the poll rate.
+
 ## Roadmap
 
 Further features are collected in the tracking ticket — see

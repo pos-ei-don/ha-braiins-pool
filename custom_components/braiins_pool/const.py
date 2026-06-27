@@ -5,6 +5,7 @@ from __future__ import annotations
 DOMAIN = "braiins_pool"
 
 CONF_API_TOKEN = "api_token"
+CONF_SCAN_INTERVAL = "scan_interval"
 
 API_BASE = "https://pool.braiins.com"
 PROFILE_EP = "/accounts/profile/json/btc/"
